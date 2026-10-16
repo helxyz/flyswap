@@ -13,7 +13,7 @@ flyswap all --data synthetic --out results/   # full pipeline, no downloads
 
 ---
 
-## Why this, and not another connectome simulator
+## Why choose this, and not another connectome simulator
 
 Running a spiking model on the fly connectome is well-trodden: Shiu et al.
 (2024) did it on the female brain, and open projects have since run the same
@@ -43,7 +43,7 @@ meant to replace, reported as rank correlation and precision@k.
 
 ---
 
-## What it does, concretely
+## Methods
 
 | Stage | Command | What comes out |
 | --- | --- | --- |
@@ -123,9 +123,6 @@ the honest answer is to run the grafts directly.
 
 ## Working with the real connectomes
 
-No connectome data ship with this repo. Download each from its official
-source, keep the local copies, and cite them:
-
 | Dataset | Sex | Coverage | Source |
 | --- | --- | --- | --- |
 | MaleCNS v1.0 | male | brain + nerve cord | [male-cns.janelia.org](https://male-cns.janelia.org/download/) |
@@ -142,7 +139,7 @@ deep.
 
 ---
 
-## Design decisions worth knowing
+## Design decisions
 
 **Weights are input fractions, not synapse counts.** A male neuron carries
 roughly 1.8× the synapses of its female counterpart — a reconstruction
@@ -170,7 +167,7 @@ never tuned per experiment until the hypothesis comes out right.
 
 ---
 
-## What this cannot tell you
+## Discussion
 
 - **Weights are estimates.** Synapse count is a proxy for strength; sign comes
   from a transmitter classifier with a real error rate. Run
@@ -202,8 +199,6 @@ it asserts that the pipeline recovers the planted dimorphism and stays quiet
 where nothing was planted.
 
 ## Citation
-
-If you use this code, cite the data and the model it builds on:
 
 - Berg, S. et al. Sexual dimorphism in the complete *Drosophila* male central
   nervous system connectome. *Cell* 189, 5504–5526 (2026).
