@@ -1,0 +1,40 @@
+[build-system]
+requires = ["setuptools>=68", "wheel"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "flyswap"
+version = "0.1.0"
+description = "Counterfactual cross-sex simulation of the Drosophila connectome"
+readme = "README.md"
+requires-python = ">=3.11"
+license = { text = "MIT" }
+authors = [{ name = "Helen Zhang" }]
+dependencies = [
+    "numpy>=1.26",
+    "scipy>=1.11",
+    "pandas>=2.1",
+    "pyarrow>=14.0",
+    "jax>=0.4.28",
+]
+
+[project.optional-dependencies]
+dev = ["pytest>=7.4", "ruff>=0.5"]
+gpu = ["jax[cuda12]>=0.4.28"]
+
+[project.scripts]
+flyswap = "flyswap.cli:main"
+
+[tool.setuptools.packages.find]
+include = ["flyswap*"]
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
+addopts = "-q"
+
+[tool.ruff]
+line-length = 100
+target-version = "py311"
+
+[tool.ruff.lint]
+select = ["E", "F", "I", "UP", "B"]

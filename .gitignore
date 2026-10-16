@@ -1,0 +1,19 @@
+__pycache__/
+*.py[cod]
+*.egg-info/
+.eggs/
+/build/
+/dist/
+.pytest_cache/
+.ruff_cache/
+.venv/
+venv/
+
+# Downloaded connectomes: large, and under their own licences.
+# Anchored to the repo root so it cannot swallow the flyswap/data package.
+/data/
+*.feather
+*.parquet
+
+# Results are reproducible from the CLI; keep the repo clean.
+/results/
